@@ -5,15 +5,15 @@ const links = [
     text: "Listado",
   },
   {
-    href: "/pokemons/1",
+    href: "/pokemons/1/",
     text: "Paginado",
   },
   {
-    href: "/favorites",
+    href: "/favorites/",
     text: "Favoritos",
   },
   {
-    href: "/island",
+    href: "/island/",
     text: "islas",
   },
 ];
@@ -23,14 +23,14 @@ const pathname = Astro.url.pathname;
 
 ---
 
-<nav class="bg-white shadow dark:bg-gray-800">
+<nav class="shadow dark:bg-gray-800">
   <div
     class="container flex flex-row gap-4 items-center justify-center p-6 mx-auto text-gray-600"
   >
     {
       links.map((item) => (
         <div>
-          <a class="text-gray-800 dark:text-gray-200 mx-1.5 mx:mx-6" href={item.href}>
+          <a class="text-gray-100 dark:text-gray-200 mx-1.5 mx:mx-6" href={item.href}>
             {item.text}
           </a>
           {pathname === item.href && (
