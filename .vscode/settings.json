@@ -1,0 +1,14 @@
+{
+  "json.schemas": [
+
+  ],
+  "files.associations": {
+  "*.astro": "astro",               // Archivos .astro para Astro
+  "*.jsx": "javascriptreact",       // Archivos JSX tratados como React
+  "*.tsx": "typescriptreact",       // Archivos TSX tratados como React
+  "*.solid.jsx": "solid",           // Archivos JSX específicos para SolidJS
+  "*.solid.tsx": "solid"            // Archivos TSX específicos para SolidJS
+},
+"editor.formatOnSave": true, // Ejemplo de otra configuración general
+"typescript.format.enable": true
+}

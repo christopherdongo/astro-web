@@ -1,38 +1,51 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
-import { siteInfo } from 'src/consts/site-info'
+import Navbar from "@components/shared/Navbar.astro";
+import {ViewTransitions} from "astro:transitions";
+import {siteInfo} from "src/consts/site-info";
 
 interface Props {
- title: string;
- image?: string;
- description?: string;
+  title: string;
+  image?: string;
+  description?: string;
 }
 
-const {title = siteInfo.title, description = siteInfo.description, image= siteInfo.image} = Astro.props
-
-
-
+const {
+  title = siteInfo.title,
+  description = siteInfo.description,
+  image = siteInfo.image,
+} = Astro.props;
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<!-- seo -->
-      <meta name="description" content={description} />
-	  <meta name="author" content="Christopher Dongo H." />
-	  <!-- og metadata -->
-	  <meta name="og:title" content={title} />
-	  <meta name="og:description" content={description} />
-	  <meta name="og:image" content={image} />
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <!-- seo -->
+    <meta name="description" content={description} />
+    <meta name="author" content="Christopher Dongo H." />
+    <!-- og metadata -->
+    <meta name="og:title" content={title} />
+    <meta name="og:description" content={description} />
+    <meta name="og:image" content={image} />
 
-	  <!--required -->
-		<title>{title}</title>
-		<ViewTransitions />
-	</head>
-	<body class="bg-slate-500 text-slate-100 max-w-7xl mx-auto min-h-screen">
-       <slot />
-	</body>
+    <!--required -->
+    <title>{title}</title>
+    <ViewTransitions />
+
+    <!-- <style>
+			@view-transition {
+			  navigation: auto;
+			}
+		  <style> -->
+  </head>
+
+  <body class="bg-slate-800 text-slate-100 max-w-7xl mx-auto min-h-screen">
+    <Navbar />
+    <main class="bg-slate-800 text-slate-100">
+
+      <slot />
+    </main>
+  </body>
 </html>

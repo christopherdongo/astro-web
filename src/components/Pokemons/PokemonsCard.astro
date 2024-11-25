@@ -3,9 +3,10 @@ interface Props {
     url: string;
     name: string;
     scale?: boolean;
+    border?: boolean;
 }
 
-const {name, url, scale} = Astro.props
+const {name, url, scale, border} = Astro.props
 /*
 const resp = await fetch(url);
 const data = (await resp.json());
@@ -19,7 +20,7 @@ const imageSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprit
 ---
 
 <article
-class={`rounded border flex flex-col justify-center items-center p-2 cursor-auto ${scale ? "hover:scale-105" : ''}`}
+class={`rounded flex flex-col justify-center items-center p-2 cursor-auto ${scale ? "hover:scale-105" : ''} ${border ? "border" : ""}`}
 >
 <!--href={`/pokemons/${name}`} -->
 <a href={`/pokemons/${name}`}>

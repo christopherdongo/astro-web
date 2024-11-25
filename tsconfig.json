@@ -3,10 +3,26 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@components/*":["./src/components/*"],
-      "@pages/*":["./src/pages/*"],
-      "@interfaces/*":["./src/interfaces/*"],
-      "@layouts/*":["./src/layouts/*"]
-    }
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@pages/*": [
+        "./src/pages/*"
+      ],
+      "@interfaces/*": [
+        "./src/interfaces/*"
+      ],
+      "@layouts/*": [
+        "./src/layouts/*"
+      ]
+    },
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js",
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true
   }
 }
