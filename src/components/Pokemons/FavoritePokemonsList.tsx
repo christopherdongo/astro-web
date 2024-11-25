@@ -4,7 +4,6 @@ import { FavoritePokemonCard } from './FavoritePokemonCard'
 
 const getLocalStoragePokemons = (): FavoritePokemon[] => {
     const favoritePokemons = JSON.parse(localStorage.getItem('favorite') ?? '[]')
-
     return favoritePokemons;
 }
 
@@ -12,12 +11,12 @@ const getLocalStoragePokemons = (): FavoritePokemon[] => {
 
 export const FavoritePokemonsList = () =>{
 
-    const [pokemons, setPokemons] = createSignal(getLocalStoragePokemons())
+    const [pokemons] = createSignal(getLocalStoragePokemons())
 
     return (
         <div class="grid grid-cols-2 sm:grid-cols-4">
             
-            <For each={pokemons()}>{(pokemon) => <FavoritePokemonCard name={pokemon.name} id={pokemon.id} /> }</For>
+            <For each={pokemons()}>{(pokemon) => <FavoritePokemonCard pokemon={pokemon} /> }</For>
 
         </div>
     )
